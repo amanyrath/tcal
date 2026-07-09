@@ -1,0 +1,25 @@
+[project]
+name = "touchstonecal"
+version = "0.1.0"
+description = "Sync Touchstone Climbing gym calendars to Google Calendar via iCal feed"
+readme = "README.md"
+requires-python = ">=3.10"
+
+[project.scripts]
+touchstonecal = "touchstonecal.__main__:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["touchstonecal*"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+redis = ["redis>=5.0"]
+sentry = ["sentry-sdk>=2.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

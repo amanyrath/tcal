@@ -1,0 +1,5 @@
+network.har
+__pycache__/
+*.pyc
+.env
+.venv/

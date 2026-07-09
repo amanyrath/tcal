@@ -1,0 +1,25 @@
+# Build / dependency artifacts
+.vercel
+.venv
+__pycache__
+*.pyc
+*.egg-info/
+.pytest_cache/
+web/node_modules
+web/dist
+dist/
+
+# Secrets / local config
+.env
+.env.*
+!.env.example
+
+# Captured network traffic (may contain cookies/tokens)
+*.har
+.ai-git
+.claude
+.pluto
+
+docs
+thoughts
+.cursor/plans/
