@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+:root {
+  font-family: var(--cal-font);
+  line-height: 1.5;
+  color: #1a1a1a;
+  background: #f8f9fa;
+
+  --cal-toolbar-bg: #4a5568;
+  --cal-toolbar-active: #1a202c;
+  --cal-toolbar-text: #ffffff;
+  --cal-today-bg: #fef9c3;
+  --cal-past-bg: #e5e7eb;
+  --cal-grid-border: #e5e7eb;
+  --cal-font: "Lato", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
