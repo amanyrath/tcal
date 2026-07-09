@@ -1,0 +1,35 @@
+{
+  "rewrites": [
+    { "source": "/api/events", "destination": "/api/events" },
+    { "source": "/calendar.ics", "destination": "/api/calendar" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ],
+  "buildCommand": "cd web && npm ci && npm run build",
+  "outputDirectory": "web/dist",
+  "env": {
+    "PYTHONPATH": ".",
+    "DAYS_AHEAD": "30",
+    "CACHE_TTL_SECONDS": "3600",
+    "GYMS": "pacific-pipe,gwpower-co,ironworks,mission-cliffs"
+  },
+  "functions": {
+    "api/calendar.py": {
+      "maxDuration": 60
+    },
+    "api/events.py": {
+      "maxDuration": 60
+    },
+    "api/index.py": {
+      "maxDuration": 60
+    },
+    "api/health.py": {
+      "maxDuration": 10
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/calendar?warm=1",
+      "schedule": "0 14 * * *"
+    }
+  ]
+}
